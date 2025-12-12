@@ -82,6 +82,10 @@ header {
   animation: fade-in 0.2s ease forwards;
 }
 
+.closed {
+  display: none;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -225,6 +229,88 @@ header {
     pulse 3s ease-in-out infinite;
 }
 
+.about-container {
+  width: 100%;
+  padding: var(--small-screen-padding);
+}
+
+.about-me {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.about-me h2 {
+  text-align: center;
+  position: relative;
+  color: var(--dark-text);
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+}
+
+.about-me h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  margin: 0 auto;
+  background: var(--dark-text);
+}
+
+.about-image {
+  width: 200px;
+  height: 240px;
+  border: 1px solid var(--dark-bg);
+  background: var(--dark-bg);
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.about-text p {
+  text-align: center;
+  color: var(--dark-bg);
+  margin-bottom: 40px;
+  word-break: keep-all;
+}
+
+.orange {
+  color: orangered;
+  font-weight: 700;
+}
+
+.hire-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -257,7 +343,7 @@ header {
   } 
   
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
@@ -293,7 +379,7 @@ header {
 
   .hero {
     width: 95%;
-    height: 400px;
+    height: 430px;
     display: flex;
     justify-content: space-between;
   }
@@ -306,7 +392,7 @@ header {
   }
 
   .hero-text h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .hero-image {
@@ -319,6 +405,41 @@ header {
     height: 100%;
     display: block;
     animation: fade-in 1.2s ease-in-out;
+  }
+
+  .about-content {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .about-image {
+    width: 300px;
+    height: 400px;
+  }
+
+  .about-image img {
+    border-radius: inherit;
+  }
+
+  .about-text {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-text p {
+    text-align: left;
+  }
+
+  .hire-button {
+    justify-content: flex-start;
+  }
+
+  .buttons button {
+    font-size: inherit;
+    width: 200px;
   }
 }
 
@@ -359,6 +480,24 @@ header {
   .hero-text h1 {
     font-size: 4rem;
   }
+
+  .about-me h2 {
+    font-size: 2rem;
+  }
+
+  .about-image {
+    width: 320px;
+    height: 400px;
+  }
+
+  .about-text {
+    width: 420px;
+    height: 400px;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -368,11 +507,11 @@ header {
 
   .hero {
     width: 950px;
-    height: 500px;
+    height: 530px;
   }
 
   .hero-text h1 {
-    font-size: 4.5rem;
+    font-size: 5rem;
   }
 
   .hero-text p {
@@ -403,11 +542,11 @@ header {
 
   .hero {
     width: 1100px;
-    height: 550px;
+    height: 580px;
   }
 
   .hero-text h1 {
-    font-size: 5.5rem;
+    font-size: 6rem;
   }
 
   .hero-image {

@@ -8,3 +8,14 @@ hamburgerButton.addEventListener("click", () => {
 
   buttonSpans.forEach(span => span.classList.toggle("active"));
 });
+
+navContainer.addEventListener("click", (event) => {
+  const target = event.target;
+
+  if (target === "link") {
+    navContainer.classList.add("closed");
+    return;
+  }
+
+  return;
+});
