@@ -79,7 +79,7 @@ header {
   -webkit-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.1);
   border-radius: 10px;
-  animation: fade-in 0.3s ease forwards;
+  animation: fade-in 0.2s ease forwards;
 }
 
 .nav-links {
@@ -93,14 +93,26 @@ header {
   padding: 10px;
   text-decoration: none;
   color: var(--semi-dark-text);
-  transition: 
-    font-size 0.2s ease,
-    font-weight 0.2s ease;
+  display: inline-block;
+  position: relative;
 }
 
-.link:hover {
-  font-size: 1rem;
-  font-weight: 700;
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--semi-dark-text);
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.link:hover::after {
+  transform: scale(1);
 }
 
 .resume {
@@ -122,7 +134,7 @@ header {
 
 .button-container {
   width: 25px;
-  height: 20px;
+  height: 10px;
 }
 
 .hamburger {
@@ -137,8 +149,7 @@ header {
   cursor: pointer;
 }
 
-.one,
-.three {
+.one {
   width: 100%;
 }
 
@@ -147,8 +158,7 @@ header {
 }
 
 .one,
-.two,
-.three {
+.two {
   height: 3px;
   background: var(--dark-text);
   border-radius: 25px;
@@ -163,13 +173,7 @@ header {
 }
 
 .two.active {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: none;
-}
-
-.three.active {
+  width: 100%;
   transform: rotate(135deg);
   position: absolute;
   top: 50%;
@@ -216,11 +220,9 @@ header {
   -webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
   transition: transform 0.3s ease-in-out;
-  animation: fade-in 2.2s ease-in-out;
-}
-
-.hire:hover {
-  transform: scale(1.1);
+  animation: 
+    fade-in 2.2s ease-in-out,
+    pulse 3s ease-in-out infinite;
 }
 
 @keyframes fade-in {
@@ -246,6 +248,16 @@ header {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  } 
+  
+  50% {
+    transform: scale(1.2);
   }
 }
 
@@ -362,6 +374,14 @@ header {
   .hero-text h1 {
     font-size: 4.5rem;
   }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .hero-image {
+    width: 700px;
+  }
 }
 
 @media screen and (min-width: 1201px) {
@@ -383,10 +403,14 @@ header {
 
   .hero {
     width: 1100px;
-    height: 540px;
+    height: 550px;
   }
 
   .hero-text h1 {
     font-size: 5.5rem;
+  }
+
+  .hero-image {
+    width: 800px;
   }
 }
