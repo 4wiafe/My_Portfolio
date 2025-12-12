@@ -42,7 +42,7 @@ body {
 
 .header-container {
   width: 100%;
-  background: var(--plain);
+  background: var(--pure-white);
   padding: var(--small-screen-padding);
   display: flex;
   justify-content: center;
@@ -62,7 +62,6 @@ header {
 
 .logo h2 {
   font-size: 1rem;
-  animation: fade-in 1s ease-in-out;
 }
 
 .nav-container {
@@ -80,8 +79,7 @@ header {
   -webkit-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.1);
   border-radius: 10px;
-  transform: translateX(100vw);
-  animation: slide-in 0.6s ease-out forwards;
+  animation: fade-in 0.3s ease forwards;
 }
 
 .nav-links {
@@ -95,6 +93,14 @@ header {
   padding: 10px;
   text-decoration: none;
   color: var(--semi-dark-text);
+  transition: 
+    font-size 0.2s ease,
+    font-weight 0.2s ease;
+}
+
+.link:hover {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .resume {
@@ -106,6 +112,12 @@ header {
   font-family: inherit;
   font-weight: 700;
   font-size: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.resume:hover {
+  transform: scale(1.1);
 }
 
 .button-container {
@@ -132,7 +144,6 @@ header {
 
 .two {
   width: 70%;
-  animation: slide-in 0.6s ease;
 }
 
 .one,
@@ -140,8 +151,8 @@ header {
 .three {
   height: 3px;
   background: var(--dark-text);
-  border-radius: 20px;
-  transition: all 0.6s ease;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
 .one.active {
@@ -155,14 +166,14 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  animation: slide-out 0.6s ease forwards;
+  display: none;
 }
 
 .three.active {
   transform: rotate(135deg);
   position: absolute;
   top: 50%;
-  transition: transform 0.6s ease;
+  transition: all 0.6s ease;
 }
 
 .hero-container {
@@ -182,17 +193,15 @@ header {
 
 .hero-text h1 {
   margin-bottom: 20px;
-  animation: slide-up 1.5s ease-in-out;
+  animation: slide-up 1s ease-in-out;
 }
 
 .hero-text p {
   margin-bottom: 20px;
-  animation: 
-    fade-in 2s ease-in-out,
-    slide-in 2s, ease-in-out;
+  animation: slide-up 2s ease-in-out;
 }
 
-.hero-text button {
+.hire {
   padding: 10px;
   border: none;
   width: 100px;
@@ -207,10 +216,10 @@ header {
   -webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
   transition: transform 0.3s ease-in-out;
-  animation: fade-in 2s ease-in-out;
+  animation: fade-in 2.2s ease-in-out;
 }
 
-.hero-text button:hover {
+.hire:hover {
   transform: scale(1.1);
 }
 
@@ -240,23 +249,18 @@ header {
   }
 }
 
-@keyframes slide-in {
-  from {
-    transform: translateX(100vw);
+@media screen and (min-width: 481px) {
+  header {
+    width: 95%;
   }
 
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-out {
-  from {
-    transform: translateX(0);
+  .logo h2 {
+    font-size: 1.2rem;
   }
 
-  to {
-    transform: translateX(100vw);
+  .hero {
+    width: 95%;
+    margin: 0 auto;
   }
 }
 
@@ -277,14 +281,16 @@ header {
 
   .hero {
     width: 95%;
+    height: 400px;
     display: flex;
+    justify-content: space-between;
   }
 
   .hero-text {
-    width: 50%;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
   }
 
   .hero-text h1 {
@@ -292,12 +298,95 @@ header {
   }
 
   .hero-image {
-    width: 50%;
-    animation: slide-in 2s ease-in-out;
+    width: 100%;
+    height: 100%;
   }
 
   .hero-image img {
     width: 100%;
+    height: 100%;
     display: block;
+    animation: fade-in 1.2s ease-in-out;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header {
+    width: 750px;
+  }
+  .logo h2 {
+    font-size: 1.2rem;
+  }
+
+  .button-container {
+    display: none;
+  }
+
+  .nav-container {
+    display: block;
+    position: static;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .link {
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    width: 750px;
+    height: 450px;
+  }
+
+  .hero-text h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  header {
+    width: 950px;
+  }
+
+  .hero {
+    width: 950px;
+    height: 500px;
+  }
+
+  .hero-text h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  header {
+    width: 1100px;
+  }
+
+  .link {
+    font-size: 1.1rem;
+  }
+
+  .link:hover {
+    font-size: 1.2rem;
+  }
+
+  .resume {
+    font-size: inherit;
+  }
+
+  .hero {
+    width: 1100px;
+    height: 540px;
+  }
+
+  .hero-text h1 {
+    font-size: 5.5rem;
   }
 }
