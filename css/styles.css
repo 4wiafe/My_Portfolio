@@ -49,7 +49,7 @@ header {
 }
 
 .nav-container {
-  width: 240px;
+  width: 245px;
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   background: var(--color1);
@@ -58,6 +58,15 @@ header {
   -webkit-box-shadow: 0px 0px 8px 2px var(--color4);
   -moz-box-shadow: 0px 0px 8px 2px var(--color4);
   display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  z-index: 11;
+}
+
+.nav-container.active {
+  display: block;
+  animation: fade-in 0.5s ease alternate;
 }
 
 .nav-links {
@@ -72,6 +81,17 @@ header {
   text-decoration: none;
   font-size: 1.1rem;
   color: var(--color2);
+}
+
+.resume {
+  padding: 8px;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  background: var(--color4);
+  color: var(--color1);
+  font-weight: bold;
+  font-size: inherit;
 }
 
 .nav-logo {
