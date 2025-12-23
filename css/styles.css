@@ -43,8 +43,6 @@ header {
   background: var(--color1);
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 10;
 }
 
@@ -96,6 +94,7 @@ header {
 
 .nav-logo {
   width: 100%;
+  max-width: 1205px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,6 +120,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  animation: fade-in 1s ease;
 }
 
 .one {
@@ -167,5 +167,74 @@ header {
 
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .nav-logo {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .nav-logo {
+    width: 100%;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .nav-container {
+    box-shadow: none;
+    display: block;
+    width: 500px;
+    position: inherit;
+    padding: 0;
+    animation: fade-in 1s ease;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .link {
+    font-size: 0.9rem;
+  }
+
+  .resume {
+    font-size: 0.9rem;
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .logo-text {
+    font-size: 1.5rem;
+  }
+
+  .link {
+    font-size: 1.2rem;
+  }
+
+  .resume {
+    font-size: 1.2rem;
+    width: 200px;
+  }
+
+  .nav-container {
+    width: 600px;
   }
 }
