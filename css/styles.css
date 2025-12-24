@@ -206,13 +206,17 @@ section {
   display: inline-block;
   color: var(--color4);
   padding-right: 5px;
-  animation: blink 0.7s step-end infinite;
+  animation: fade-in 3s ease;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   font-family: "Goodly", sans-serif;
+}
+
+.hero-text p {
+  animation: slide-up 3s ease-out forwards;
 }
 
 button {
@@ -229,10 +233,23 @@ button {
   border-radius: 8px;
   animation: 
     pulse 2s ease infinite alternate,
-    shadow 2s ease infinite alternate;
+    glow 2s ease infinite alternate,
+    slide-up 3s ease-out forwards;
 }
 
-@keyframes shadow {
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
   from {
     box-shadow: none;
   }
