@@ -20,6 +20,11 @@ html {
   font-weight: 700;
 }
 
+@font-face {
+  font-family: "Goodly";
+  src: url(../fonts/goodly/goodly-bold.otf);
+}
+
 :root {
   /* colors */
   --color1: #121212;
@@ -106,6 +111,7 @@ header {
   letter-spacing: 5px;
   font-weight: 300;
   animation: fade-in 1s ease;
+  font-family: "Goodly", sans-serif;
 }
 
 .menu-btn {
@@ -196,7 +202,7 @@ section {
 }
 
 .hero-title h1 {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   display: inline-block;
   color: var(--color4);
   padding-right: 5px;
@@ -206,6 +212,11 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  font-family: "Goodly", sans-serif;
+}
+
+button {
+  color: var(--color1);
 }
 
 .hire-me {
@@ -261,6 +272,22 @@ section {
   .nav-logo {
     width: 90%;
   }
+
+  .hero-text-container {
+    width: 400px;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .hero-title h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text-container {
+    gap: 30px;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -305,6 +332,24 @@ section {
     font-size: 0.9rem;
     width: 150px;
   }
+
+  .hero-text-container {
+    width: 600px;
+    gap: 45px;
+  }
+
+  .hero-title h1 {
+    font-size: 4rem;
+  }
+
+  .hero-text p {
+    font-size: 1.5rem;
+  }
+
+  .hire-me {
+    font-size: 1.2rem;
+    width: 120px;
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -323,5 +368,14 @@ section {
 
   .nav-container {
     width: 600px;
+  }
+
+  .hero-text-container {
+    width: 900px;
+    gap: 60px;
+  }
+
+  .hero-title h1 {
+    font-size: 6rem;
   }
 }
