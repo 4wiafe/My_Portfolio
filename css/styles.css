@@ -32,6 +32,7 @@ body {
   background: var(--color1);
   color: var(--color2);
   font-family: "Inter", sans-serif;
+  line-height: 1.5;
 }
 
 header {
@@ -160,6 +161,76 @@ header {
 main {
   margin-top: 70px;
   padding: 20px;
+  width: 100%;
+}
+
+section {
+  padding: 10px;
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-text-container {
+  width: 300px;
+  max-width: 1500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--color3);
+}
+
+.name {
+  color: var(--color2);
+  font-weight: 700;
+}
+
+.hero-title {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+}
+
+.hero-title h1 {
+  font-size: 1.5rem;
+  display: inline-block;
+  color: var(--color4);
+  padding-right: 5px;
+  animation: blink 0.7s step-end infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.hire-me {
+  width: 100px;
+  padding: 8px;
+  border: none;
+  font-family: inherit;
+  font-weight: bold;
+  background: var(--color4);
+  border-radius: 8px;
+  animation: 
+    pulse 2s ease infinite alternate,
+    shadow 2s ease infinite alternate;
+}
+
+@keyframes shadow {
+  from {
+    box-shadow: none;
+  }
+
+  to {
+    box-shadow: 0px 0px 10px 5px var(--color4);
+    -webkit-box-shadow: 0px 0px 10px 5px var(--color4);
+    -moz-box-shadow: 0px 0px 10px 5px var(--color4);
+  }
 }
 
 @keyframes fade-in {
@@ -173,6 +244,16 @@ main {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
   }
 }
 
