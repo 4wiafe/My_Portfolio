@@ -35,7 +35,7 @@ html {
 
 body {
   background: var(--color1);
-  color: var(--color2);
+  color: var(--color3);
   font-family: "Inter", sans-serif;
   line-height: 1.5;
 }
@@ -112,6 +112,7 @@ header {
   font-weight: 300;
   animation: fade-in 1s ease;
   font-family: "Goodly", sans-serif;
+  color: var(--color2);
 }
 
 .menu-btn {
