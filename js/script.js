@@ -11,6 +11,20 @@ hamburgerBtn.addEventListener("click", () => {
   navContainer.classList.toggle("active");
 });
 
+navContainer.addEventListener("click", (event) => {
+  const target = event.target.dataset;
+
+  if (target.id !== "list") return;
+
+  if (target.id === "list") {
+    navContainer.classList.remove("active");
+
+    buttonSpans.forEach(span => {
+      span.classList.remove("active");
+    });
+  }
+});
+
 const words = [
   "Front-end Engineer",
   "UI/UX Enthusiast",
