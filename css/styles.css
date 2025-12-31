@@ -30,7 +30,12 @@ html {
   --color1: #121212;
   --color2: #E5E5E5;
   --color3: #B0B0B0;
-  --color4: #ffeb3b;
+  --color4: #FFEB3B;
+  --figma-color: #F24E1E;
+  --html-color: #E34C26;
+  --css-color: #264de4;
+  --js-color: #F7Df1E;
+  --git-color: #F1502F;
 }
 
 body {
@@ -339,7 +344,7 @@ h3 {
 
 .projects h2 {
   margin-top: 50px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
 }
 
@@ -424,6 +429,71 @@ h3 {
   color: var(--color3);
   border: 1px solid var(--color2);
   border-radius: 5px;
+}
+
+.skills-title {
+  text-align: center;
+}
+
+.skill-title.underline {
+  margin-bottom: 100px;
+}
+
+.skills-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill i {
+  font-size: 10rem;
+}
+
+.skill span {
+  font-size: 1.2rem;
+}
+
+.figma i {
+  background: linear-gradient(
+    135deg,
+    #f24e1e,
+    #ff7262,
+    #a259ff,
+    #1abcfe,
+    #0acf83
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+.html i {
+  color: var(--html-color);
+}
+
+.css i {
+  color: var(--css-color);
+}
+
+.javascript i {
+  color: var(--js-color);
+}
+
+.git i {
+  color: var(--git-color);
+}
+
+.github i {
+  color: var(--color2);
 }
 
 @keyframes slide-up {
@@ -667,10 +737,10 @@ h3 {
   }
 }
 
-@media (min-width: 1500px) {
+/* @media (min-width: 1500px) {
   body {
     box-shadow: 0px 0px 5px 2px var(--color4);
   -webkit-box-shadow: 0px 0px 5px 2px var(--color4);
   -moz-box-shadow: 0px 0px 5px 2px var(--color4);
   }
-}
+} */
