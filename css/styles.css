@@ -573,10 +573,8 @@ h3 {
   gap: 20px;
   padding: 15px;
   margin-bottom: 50px;
+  border: 1px solid var(--color2);
   border-radius: 10px;
-  box-shadow: 0px 0px 15px 5px var(--color2);
-  -webkit-box-shadow: 0px 0px 15px 5px var(--color2);
-  -moz-box-shadow: 0px 0px 15px 5px var(--color2);
 }
 
 .form-container h3 {
@@ -622,6 +620,80 @@ h3 {
     font-size: 1.1rem;
     font-weight: bold;
     background: var(--color4);
+}
+
+footer {
+  width: 100%;
+  padding: 20px;
+  background: #201F1F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+footer div {
+  margin-top: 50px;
+}
+
+.yellow {
+  color: var(--color4);
+}
+
+.my-info {
+  width: 100%;
+}
+
+.footer-socials a {
+  text-decoration: none;
+  color: var(--color2);
+  font-size: 1.5rem;
+}
+
+footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.my-info p {
+  margin-bottom: 10px;
+}
+
+.footer-btn {
+  margin-bottom: 10px;
+}
+
+.underline.footer {
+  margin-bottom: 10px;
+}
+
+.useful-links a {
+  color: var(--color3);
+}
+
+.tools-container ul {
+  list-style: none;
+}
+
+.tools-container ul li {
+  margin: 20px;
+}
+
+button {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.link:hover {
+  color: var(--color4);
+}
+
+.link:active {
+  color: var(--color4);
 }
 
 @keyframes slide-up {
@@ -845,6 +917,25 @@ h3 {
   .contact-container {
     width: 700px;
   }
+
+  .useful-links ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .useful-links ul li {
+    margin-left: 20px;
+    padding: 10px;
+  }
+
+  footer {
+    flex-direction: row;
+  }
+
+  .my-info {
+    width: 300px;
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -900,16 +991,28 @@ h3 {
     object-fit: contain;
   }
 
-  .conta {
-    width: 1200px;
-  }
-
-  .form-container {
+  .contact-container {
     width: 1000px;
   }
 
+  .form-container {
+    width: 400px;
+  }
+
   .contact-card {
-    width: 600px;
+    width: 300px;
+  }
+
+  .my-info {
+    width: 400px;
+  }
+
+  .footer-socials a {
+    font-size: 2rem;
+  }
+
+  footer {
+    gap: 100px;
   }
 }
 
