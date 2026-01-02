@@ -2,6 +2,9 @@ const hamburgerBtn = document.querySelector(".hamburger");
 const buttonSpans = document.querySelectorAll("button span");
 const navContainer = document.querySelector(".nav-container");
 const typewriterElement = document.querySelector(".typewriter");
+const hireBtns = document.querySelectorAll(".hire-btn");
+const hero = document.querySelector(".hero");
+const documentBody = document.querySelector("body");
 
 hamburgerBtn.addEventListener("click", () => {
   buttonSpans.forEach(span => {
@@ -67,3 +70,30 @@ function typing() {
 }
 
 typing();
+
+hireBtns.forEach(button => {
+  button.addEventListener("click", () => {
+    document.getElementById("contact").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  hero.style.backgroundPositionY = `${scrollY * 0.4}px`;
+});
+
+documentBody.addEventListener("click", (e) => {
+  if (
+    navContainer.classList.contains("active") &&
+    !navContainer.contains(e.target) &&
+    !hamburgerBtn.contains(e.target)
+  ) {
+    navContainer.classList.remove("active");
+    buttonSpans.forEach(span => {
+      span.classList.remove("active");
+    });
+  }
+});
+

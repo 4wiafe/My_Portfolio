@@ -6,6 +6,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -59,6 +60,7 @@ header {
   left: 0;
   z-index: 10;
   background: var(--color1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
@@ -226,7 +228,7 @@ section {
 }
 
 .hero-text p {
-  animation: slide-up 2s ease-out forwards;
+  animation: slide-up 1s ease-out forwards;
 }
 
 button {
@@ -244,7 +246,7 @@ button {
   animation: 
     pulse 2s ease infinite alternate,
     glow 2s ease infinite alternate,
-    slide-up 3s ease-out forwards;
+    slide-up 1s ease-out forwards;
 }
 
 .about {
@@ -698,7 +700,7 @@ button:hover {
 
 @keyframes slide-up {
   from {
-    transform: translateY(100%);
+    transform: translateY(20px);
     opacity: 0;
   }
 
@@ -1016,10 +1018,15 @@ button:hover {
   }
 }
 
-/* @media (min-width: 1500px) {
+@media (min-width: 1500px) {
   body {
-    box-shadow: 0px 0px 5px 2px var(--color4);
-  -webkit-box-shadow: 0px 0px 5px 2px var(--color4);
-  -moz-box-shadow: 0px 0px 5px 2px var(--color4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-} */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
