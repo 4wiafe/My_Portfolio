@@ -5,6 +5,12 @@ const typewriterElement = document.querySelector(".typewriter");
 const hireBtns = document.querySelectorAll(".hire-btn");
 const hero = document.querySelector(".hero");
 const documentBody = document.querySelector("body");
+const nameField = document.getElementById("full-name");
+const emailField = document.getElementById("email");
+const messageField = document.getElementById("message");
+const form = document.querySelector("form");
+const formStatus = document.querySelector(".form-status");
+const formSubmitBtn = document.querySelector(".submit");
 
 hamburgerBtn.addEventListener("click", () => {
   buttonSpans.forEach(span => {
@@ -97,3 +103,44 @@ documentBody.addEventListener("click", (e) => {
   }
 });
 
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  if (!form.checkValidity()) return;
+
+  formSubmitBtn.disabled = true;
+
+  try {
+    const response = await fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: {
+      Accept: "application/json"
+    }
+  });
+
+  if (response.ok) {
+    form.reset();
+    formStatus.textContent = "✅ Your message has been sent successfully.";
+    formStatus.classList.add("success");
+    formStatus.hidden = false;
+
+    setTimeout(() => {
+      formStatus.hidden = true;
+    }, 5000);
+  } else {
+    throw new Error("Submission failed.");
+  }
+
+  } catch (error) {
+    formStatus.textContent = "❌ Something went wrong. Please try again later.";
+    formStatus.classList.add("error");
+    formStatus.hidden = false;
+
+    setTimeout(() => {
+      formStatus.hidden = true;
+    }, 5000);
+  } finally {
+    formSubmitBtn.disabled = false;
+  }
+});
