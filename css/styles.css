@@ -325,35 +325,33 @@ h2 {
   font-size: 2rem;
 }
 
-.buttons {
+.about-buttons {
   width: 250px;
+  padding: 10px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.buttons button {
-  padding: 8px;
-  font-family: inherit;
-  font-weight: bold;
-  border-radius: 8px;
-}
-
 .about-btn-hire {
-  background: var(--color4);
-  width: 90px;
   border: none;
+  width: 100%;
+  font-family: inherit;
+  border-radius: 5px;
+  background: var(--color4);
+  color: var(--color1);
+  font-weight: bold;
+  padding: 8px;
 }
 
 .about-btn-resume {
-  padding: 10px;
-  background: transparent;
   text-decoration: none;
   border: 1px solid var(--color4);
   border-radius: 5px;
   color: var(--color3);
-  font-weight: bold;
+  padding: 5px;
+  width: 100%;
 }
 
 .about-resume-container {
@@ -362,6 +360,11 @@ h2 {
 
 .about-resume-container:hover {
   transform: scale(1.1);
+}
+
+.about-btn-hire,
+.about-btn-resume  {
+  text-align: center;
 }
 
 h3 {
@@ -825,6 +828,14 @@ button:hover {
   .contact-container {
     width: 350px;
     margin: 50px auto;
+  }
+
+  .about-buttons {
+    width: 300px;
+  }
+
+  .hire-btn-container {
+    width: 100px;
   }
 }
 
