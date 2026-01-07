@@ -505,6 +505,15 @@ h3 {
   color: transparent;
 }
 
+.figma i,
+.html i,
+.css i,
+.javascript i,
+.git i,
+.github i {
+  font-size: 5rem;
+}
+
 .html i {
   color: var(--html-color);
 }
@@ -954,6 +963,15 @@ button:hover {
   .projects-subtitle {
     font-size: 1.5rem;
   }
+
+  .figma i,
+  .html i,
+  .css i,
+  .javascript i,
+  .git i,
+  .github i {
+  font-size: 8rem;
+}
 
   .contact-title {
     font-size: 4rem;
