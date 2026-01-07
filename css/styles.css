@@ -98,15 +98,25 @@ header {
   color: var(--color2);
 }
 
+a {
+  cursor: pointer;
+}
+
 .resume {
   padding: 8px;
-  font-family: inherit;
-  border: none;
   border-radius: 8px;
   background: var(--color4);
   color: var(--color1);
   font-weight: bold;
-  font-size: inherit;
+  text-decoration: none;
+}
+
+.resume-btn {
+  transition:  transform 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: scale(1.1);
 }
 
 .nav-logo {
@@ -336,9 +346,21 @@ h2 {
 }
 
 .about-btn-resume {
-  border: 1px solid var(--color4);
+  padding: 10px;
   background: transparent;
+  text-decoration: none;
+  border: 1px solid var(--color4);
+  border-radius: 5px;
   color: var(--color3);
+  font-weight: bold;
+}
+
+.about-resume-container {
+  transition: transform 0.3s ease;
+}
+
+.about-resume-container:hover {
+  transform: scale(1.1);
 }
 
 h3 {
@@ -664,6 +686,11 @@ footer h3 {
 
 .footer-btn {
   margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.footer-btn:hover {
+  transform: scale(1.1);
 }
 
 .underline.footer {
