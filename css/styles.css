@@ -37,6 +37,7 @@ html {
   --css-color: #264de4;
   --js-color: #F7Df1E;
   --git-color: #F1502F;
+  --react-color: #61DAFB;
 }
 
 body {
@@ -510,7 +511,7 @@ h3 {
 .css i,
 .javascript i,
 .git i,
-.github i {
+.react i {
   font-size: 5rem;
 }
 
@@ -530,8 +531,8 @@ h3 {
   color: var(--git-color);
 }
 
-.github i {
-  color: var(--color2);
+.react i {
+  color: var(--react-color);
 }
 
 .contact-title {
@@ -969,7 +970,7 @@ button:hover {
   .css i,
   .javascript i,
   .git i,
-  .github i {
+  .react i {
   font-size: 8rem;
 }
 
