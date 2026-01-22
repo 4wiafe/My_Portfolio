@@ -72,3 +72,9 @@
   /* Glow */
   --glow: rgba(37, 99, 235, 0.15);
 }
+
+html {
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
