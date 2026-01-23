@@ -28,6 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
     onReverseComoplete: unlockScroll
   });
 
+  navTimeline
+    .to(overlay, {
+      opacity: 1,
+      pointerEvents: "auto"
+    })
+    .to(navContainer, {
+      scaleY: 1,
+      opacity: 1,
+      pointerEvents: "auto"
+    }, "-=0.1")
+    .from(navLinks, {
+      y: -12,
+      opacity: 0,
+      stagger: 0.08
+    }, "-=0.25");
+
   function updateThemeIcon(theme) {
     themeIcon.className =
       theme === "light" ? "fa-regular fa-moon" : "fa-regular fa-sun";
