@@ -1,60 +1,48 @@
-const rootElement = document.documentElement;
-const themeToggle = document.querySelector(".theme-toggle");
-const themeIcon = document.querySelector("i");
-const hamburgerBtn = document.querySelector(".hamburger");
-const navContainer = document.querySelector(".nav-container");
-const hamburgerSpans = document.querySelectorAll("button > span");
+document.addEventListener("DOMContentLoaded", () => {
+  const rootElement = document.documentElement;
+  const themeToggle = document.querySelector(".theme-toggle");
+  const themeIcon = document.querySelector("i");
+  const hamburgerBtn = document.querySelector(".hamburger");
+  const navContainer = document.querySelector(".nav-container");
+  const hamburgerSpans = document.querySelectorAll("button > span");
 
-const THEME_KEY = "theme";
+  const THEME_KEY = "theme";
 
-function getSavedTheme() {
-  try {
-    const savedTheme = localStorage.getItem(THEME_KEY);
+  function updateThemeIcon(theme) {
+    themeIcon.className =
+      theme === "light" ? "fa-regular fa-moon" : "fa-regular fa-sun";
+  }
 
-    if (savedTheme === "light" || savedTheme === "dark") {
-      updateThemeIcon(savedTheme);
-      return savedTheme;
-    }
+  function getSavedTheme() {
+    try {
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      if (savedTheme === "light" || savedTheme === "dark") {
+        updateThemeIcon(savedTheme);
+        return savedTheme;
+      }
 
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    if (prefersDark) {
-      updateThemeIcon("dark");
-      return "dark";
-    } else {
-      updateThemeIcon("light");
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    } catch {
       return "light";
     }
-
-  } catch (error) {
-    console.error("Theme detection failed", error);
-    return "light";
   }
-}
 
-const theme = getSavedTheme();
-rootElement.setAttribute("data-theme", theme);
+  const theme = getSavedTheme();
+  rootElement.setAttribute("data-theme", theme);
 
-themeToggle.addEventListener("click", () => {
-  const currentTheme = rootElement.getAttribute("data-theme");
-  const newTheme = currentTheme === "light" ? "dark" : "light";
+  themeToggle.addEventListener("click", () => {
+    const newTheme =
+      rootElement.getAttribute("data-theme") === "light" ? "dark" : "light";
 
-  rootElement.setAttribute("data-theme", newTheme);
-  updateThemeIcon(newTheme);
-  localStorage.setItem(THEME_KEY, newTheme);
-});
+    rootElement.setAttribute("data-theme", newTheme);
+    updateThemeIcon(newTheme);
+    localStorage.setItem(THEME_KEY, newTheme);
+  });
 
-function updateThemeIcon(theme) {
-  return theme === "light" ? 
-    themeIcon.className = "fa-regular fa-moon" : 
-    themeIcon.className = "fa-regular fa-sun";
-}
-
-hamburgerBtn.addEventListener("click", () => {
-  navContainer.classList.toggle("open");
-  hamburgerSpans.forEach(span => {
-    span.classList.toggle("active");
+  hamburgerBtn.addEventListener("click", () => {
+    navContainer.classList.toggle("open");
+    hamburgerSpans.forEach(span => span.classList.toggle("active"));
   });
 });
