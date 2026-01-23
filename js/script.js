@@ -9,6 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const THEME_KEY = "theme";
 
+  function lockScroll() {
+    document.body.style.overflow = "hidden";
+  }
+
+  function unlockScroll() {
+    document.body.style.overflow = "";
+  }
+
   function updateThemeIcon(theme) {
     themeIcon.className =
       theme === "light" ? "fa-regular fa-moon" : "fa-regular fa-sun";
