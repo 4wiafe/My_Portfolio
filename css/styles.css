@@ -183,13 +183,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
+  transform-origin: top;
+  transform: scaleY(0);
   opacity: 0;
-}
-
-.nav-container.open {
-  visibility: visible;
-  opacity: 1;
+  pointer-events: none;
 }
 
 .nav-links {
@@ -203,6 +200,17 @@ body {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 10px;
+}
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 900;
 }
 
 .link {
