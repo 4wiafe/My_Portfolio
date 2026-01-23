@@ -1,6 +1,9 @@
 const rootElement = document.documentElement;
 const themeToggle = document.querySelector(".theme-toggle");
 const themeIcon = document.querySelector("i");
+const hamburgerBtn = document.querySelector(".hamburger");
+const navContainer = document.querySelector(".nav-container");
+const hamburgerSpans = document.querySelectorAll("button > span");
 
 const THEME_KEY = "theme";
 
@@ -48,3 +51,10 @@ function updateThemeIcon(theme) {
     themeIcon.className = "fa-regular fa-moon" : 
     themeIcon.className = "fa-regular fa-sun";
 }
+
+hamburgerBtn.addEventListener("click", () => {
+  navContainer.classList.toggle("open");
+  hamburgerSpans.forEach(span => {
+    span.classList.toggle("active");
+  });
+});

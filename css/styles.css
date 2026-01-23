@@ -216,6 +216,11 @@ body {
   opacity: 0;
 }
 
+.nav-container.open {
+  visibility: visible;
+  opacity: 1;
+}
+
 .nav-links {
   list-style: none;
   padding: 25px 10px;
@@ -260,6 +265,25 @@ body {
   height: 3px;
   background: var(--text-primary);
   border-radius: 3px;
+}
+
+.bar1.active {
+  transform: rotate(-135deg);
+  position: absolute;
+  top: 50%;
+}
+
+.bar2.active {
+  visibility: hidden;
+  opacity: 0;
+  transition: all var(--transition-base);
+}
+
+.bar3.active {
+  transform: rotate(135deg);
+  position: absolute;
+  top: 50%;
+  transition: transform var(--transition-base);
 }
 
 .theme-toggle {
