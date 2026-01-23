@@ -17,6 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   }
 
+  const navTimeline = WebGLSampler.timeline({
+    paused: true,
+    defaults: {
+      duration: 0.45,
+      ease: "power3.inOut"
+    },
+    onStart: lockScroll,
+    onReverseComoplete: unlockScroll
+  });
+
   function updateThemeIcon(theme) {
     themeIcon.className =
       theme === "light" ? "fa-regular fa-moon" : "fa-regular fa-sun";
