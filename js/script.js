@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburgerBtn = document.querySelector(".hamburger");
   const navContainer = document.querySelector(".nav-container");
   const hamburgerSpans = document.querySelectorAll("button > span");
-  const navOverlay = document.querySelector(".nav-overlay");
+  const overlay = document.querySelector(".nav-overlay");
+  const navLinks = document.querySelectorAll(".nav-links li");
 
   const THEME_KEY = "theme";
 
