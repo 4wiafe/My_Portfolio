@@ -4,11 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeIcon = document.querySelector("i");
   const hamburgerBtn = document.querySelector(".hamburger");
   const navContainer = document.querySelector(".nav-container");
-  const hamburgerSpans = document.querySelectorAll("button > span");
-  const overlay = document.querySelector(".nav-overlay");
-  const navLinks = document.querySelectorAll(".nav-links li");
+  const navLinks = document.querySelectorAll(".nav-links li a");
 
   const THEME_KEY = "theme";
+  let isMenuOpen = false;
 
   function lockScroll() {
     document.body.style.overflow = "hidden";
@@ -18,21 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   }
 
-  const navTimeline = WebGLSampler.timeline({
+  const navTimeline = gsap.timeline({
     paused: true,
     defaults: {
       duration: 0.45,
       ease: "power3.inOut"
     },
     onStart: lockScroll,
-    onReverseComoplete: unlockScroll
+    onReverseComplete: unlockScroll
   });
 
   navTimeline
-    .to(overlay, {
-      opacity: 1,
-      pointerEvents: "auto"
-    })
     .to(navContainer, {
       scaleY: 1,
       opacity: 1,
@@ -42,7 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
       y: -12,
       opacity: 0,
       stagger: 0.08
-    }, "-=0.25");
+    }, "-=0.25")
+    .to('.bar1', { rotate: -135, y: 8 }, 0)
+    .to('.bar2', { opacity: 0 }, 0)
+    .to('.bar3', { rotate: 135, y: -8 }, 0);
 
   function updateThemeIcon(theme) {
     themeIcon.className =
@@ -78,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   hamburgerBtn.addEventListener("click", () => {
-    navContainer.classList.toggle("open");
-    hamburgerSpans.forEach(span => span.classList.toggle("active"));
+    isMenuOpen = !isMenuOpen;
+    isMenuOpen ? navTimeline.play() : navTimeline.reverse();
   });
 });

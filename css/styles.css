@@ -129,6 +129,7 @@ html {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: var(--bg);
+  transition: background 0.5s ease;
 }
 
 /* Header */
@@ -202,17 +203,6 @@ body {
   border-radius: 10px;
 }
 
-.nav-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 900;
-}
-
 .link {
   text-decoration: none;
   font-size: 1.2rem;
@@ -244,25 +234,6 @@ body {
   height: 3px;
   background: var(--text-primary);
   border-radius: 3px;
-}
-
-.bar1.active {
-  transform: rotate(-135deg);
-  position: absolute;
-  top: 50%;
-}
-
-.bar2.active {
-  visibility: hidden;
-  opacity: 0;
-  transition: all var(--transition-base);
-}
-
-.bar3.active {
-  transform: rotate(135deg);
-  position: absolute;
-  top: 50%;
-  transition: transform var(--transition-base);
 }
 
 .theme-toggle {
