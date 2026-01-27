@@ -238,9 +238,13 @@ article {
 
 .list-item {
   padding: 10px;
-  background: var(--glass-bg);
+  color: var(--text-secondary);
   border: 1px solid var(--glass-border);
-  border-radius: 5px;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  
 }
 
 .list-item::before {
