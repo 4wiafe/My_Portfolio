@@ -296,3 +296,7 @@ article {
   border: 1px solid var(--accent);
   color: var(--text-secondary);
 }
+
+.button-icon {
+  margin-left: 5px;
+}
