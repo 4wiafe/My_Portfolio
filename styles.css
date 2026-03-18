@@ -30,4 +30,54 @@ body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
+  font-family: var(--font-body);
+}
+
+header {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-btn {
+  height: 20px;
+  width: 25px;
+}
+
+.menu-btn button {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border: none;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo a {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+nav {
+  display: none;
 }
