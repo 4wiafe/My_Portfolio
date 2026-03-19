@@ -1153,12 +1153,6 @@ footer {
   .about-grid { gap: 90px; }
   .about-photo { max-width: 380px; }
 
-  /* Featured project: side by side */
-  .project-featured {
-    display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    flex-direction: unset;
-  }
   .project-screenshot { height: 100%; min-height: 400px; }
   .project-body { padding: 48px 44px; justify-content: center; }
 
